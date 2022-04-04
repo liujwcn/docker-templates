@@ -18,7 +18,7 @@
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
   <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/plexinc/pms-docker/master/plex-unRAID.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/plexinc/pms-docker/master/img/plex-server.png</Icon>
+  <Icon>https://cdn.jsdelivr.net/gh/plexinc/pms-docker@master/img/plex-server.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
