@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>xteve</Name>
+  <Repository>alturismo/xteve</Repository>
+  <Registry>https://hub.docker.com/r/alturismo/xteve</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:34400]/web</WebUI>
+  <TemplateURL/>
+  <Icon>https://gitee.com/liujwcn/unraid/raw/master/img/xteve-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1649053397</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/sda5/appdata/xteve</HostDir>
+      <ContainerDir>/root/.xteve</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/sda5/appdata/xteve</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/tmp/xteve</HostDir>
+      <ContainerDir>/tmp/xteve</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/sda5/appdata/tvheadend/data</HostDir>
+      <ContainerDir>/TVH</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Specify a timezone to use EG Europe/London." Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="/root/.xteve" Target="/root/.xteve" Default="" Mode="rw" Description="Container Path: /root/.xteve" Type="Path" Display="always" Required="false" Mask="false">/mnt/sda5/appdata/xteve</Config>
+  <Config Name="/config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/sda5/appdata/xteve</Config>
+  <Config Name="/tmp/xteve" Target="/tmp/xteve" Default="" Mode="rw" Description="Container Path: /tmp/xteve" Type="Path" Display="always" Required="false" Mask="false">/tmp/xteve</Config>
+  <Config Name="/TVH" Target="/TVH" Default="" Mode="rw" Description="Container Path: /TVH" Type="Path" Display="always" Required="false" Mask="false">/mnt/sda5/appdata/tvheadend/data</Config>
+</Container>
