@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ddns-updater</Name>
+  <Repository>qmcgaw/ddns-updater</Repository>
+  <Registry>https://hub.docker.com/r/qmcgaw/ddns-updater/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://cdn.jsdelivr.net/gh/qdm12/ddns-updater@master/readme/duckdns.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1649054135</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/sda5/appdata/ddns-updater/</HostDir>
+      <ContainerDir>/updater/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>8000</Value>
+      <Name>LISTENING_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="/updater/data" Target="/updater/data" Default="" Mode="rw" Description="Directory to read and write data files from internally" Type="Path" Display="always" Required="false" Mask="false">/mnt/sda5/appdata/ddns-updater/</Config>
+  <Config Name="LISTENING_PORT" Target="LISTENING_PORT" Default="" Mode="" Description="Internal TCP listening port for the web UI" Type="Variable" Display="always" Required="false" Mask="false">8000</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Specify a timezone to use EG Europe/London." Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+</Container>
