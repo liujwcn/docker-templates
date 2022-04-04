@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>qinglong</Name>
+  <Repository>whyour/qinglong:latest</Repository>
+  <Registry>https://hub.docker.com/r/whyour/qinglong/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:5700]</WebUI>
+  <TemplateURL/>
+  <Icon>https://z3.ax1x.com/2021/11/18/I7MpAe.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1649014160</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/sda5/appdata/qinglong</HostDir>
+      <ContainerDir>/ql/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Path 1" Target="/ql/data" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/sda5/appdata/qinglong</Config>
+</Container>
