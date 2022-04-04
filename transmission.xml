@@ -13,7 +13,7 @@
   <Category/>
   <WebUI>http://[IP]:[PORT:9091]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/linuxserver/templates/main/unraid/transmission.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/transmission-logo.png</Icon>
+  <Icon>https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/transmission-logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
