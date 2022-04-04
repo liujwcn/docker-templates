@@ -2,25 +2,25 @@
 <Container version="2">
   <Name>transmission</Name>
   <Repository>lscr.io/linuxserver/transmission</Repository>
-  <Registry>https://github.com/orgs/linuxserver/packages/container/package/transmission</Registry>
+  <Registry>https://github.com/linuxserver/docker-transmission</Registry>
   <Network>host</Network>
   <MyIP/>
-  <Shell>bash</Shell>
+  <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/linuxserver/docker-transmission/issues/new/choose</Support>
   <Project>https://www.transmissionbt.com/</Project>
-  <Overview>Transmission(https://www.transmissionbt.com/) is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, &#xB5;TP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.</Overview>
+  <Overview/>
   <Category/>
   <WebUI>http://[IP]:[PORT:9091]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/linuxserver/templates/main/unraid/transmission.xml</TemplateURL>
+  <TemplateURL/>
   <Icon>https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/transmission-logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1635917921</DateInstalled>
+  <DateInstalled>1649050817</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>Transmission(https://www.transmissionbt.com/) is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, &#xB5;TP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.</Description>
+  <Description/>
   <Networking>
     <Mode>host</Mode>
     <Publish>
@@ -70,19 +70,29 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>dlmm201</Value>
+      <Value>admin</Value>
       <Name>PASS</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>iplist</Value>
+      <Value>*</Value>
       <Name>WHITELIST</Name>
-      <Mode>{3}</Mode>
+      <Mode/>
     </Variable>
     <Variable>
-      <Value>dnsnane list</Value>
+      <Value>*</Value>
       <Name>HOST_WHITELIST</Name>
-      <Mode>{3}</Mode>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>51413</Value>
+      <Name>PEERPORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
     </Variable>
     <Variable>
       <Value>99</Value>
@@ -94,25 +104,21 @@
       <Name>PGID</Name>
       <Mode>{3}</Mode>
     </Variable>
-    <Variable>
-      <Value>022</Value>
-      <Name>UMASK</Name>
-      <Mode>{3}</Mode>
-    </Variable>
   </Environment>
   <Labels/>
   <Config Name="WebUI" Target="9091" Default="9091" Mode="tcp" Description="WebUI" Type="Port" Display="always" Required="true" Mask="false">9091</Config>
-  <Config Name="Port: 51413" Target="51413" Default="51413" Mode="tcp" Description="Torrent Port TCP" Type="Port" Display="always" Required="true" Mask="false">51413</Config>
-  <Config Name="Port: 51413" Target="51413" Default="51413" Mode="udp" Description="Torrent Port UDP" Type="Port" Display="always" Required="true" Mask="false">51413</Config>
-  <Config Name="Path: /downloads" Target="/downloads" Default="" Mode="rw" Description="Local path for downloads." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/</Config>
-  <Config Name="Path: /watch" Target="/watch" Default="" Mode="rw" Description="Watch folder for torrent files." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/watch/</Config>
-  <Config Name="TRANSMISSION_WEB_HOME" Target="TRANSMISSION_WEB_HOME" Default="/transmission-web-control/" Mode="" Description="Specify an alternative UI options are `/combustion-release/`(https://github.com/Secretmapper/combustion), `/transmission-web-control/`(https://github.com/ronggang/transmission-web-control), `/kettu/`(https://github.com/endor/kettu) and `/flood-for-transmission/`(https://github.com/johman10/flood-for-transmission)." Type="Variable" Display="always" Required="false" Mask="false">/transmission-web-control/</Config>
-  <Config Name="USER" Target="USER" Default="admin" Mode="" Description="Specify an optional username for the interface" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
-  <Config Name="PASS" Target="PASS" Default="admin" Mode="" Description="Specify an optional password for the interface" Type="Variable" Display="always" Required="false" Mask="true">admin</Config>
-  <Config Name="WHITELIST" Target="WHITELIST" Default="iplist" Mode="{3}" Description="Specify an optional list of comma separated ip whitelist. Fill rpc-whitelist setting." Type="Variable" Display="always" Required="false" Mask="false">iplist</Config>
-  <Config Name="HOST_WHITELIST" Target="HOST_WHITELIST" Default="dnsnane list" Mode="{3}" Description="Specify an optional list of comma separated dns name whitelist. Fill rpc-host-whitelist setting." Type="Variable" Display="always" Required="false" Mask="false">dnsnane list</Config>
-  <Config Name="Appdata" Target="/config" Default="/mnt/sda5/appdata/transmission" Mode="rw" Description="Where transmission should store config files and logs." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/sda5/appdata/transmission</Config>
+  <Config Name="TCP_PORT" Target="51413" Default="51413" Mode="tcp" Description="Torrent Port TCP" Type="Port" Display="always" Required="true" Mask="false">51413</Config>
+  <Config Name="UDP_PORT" Target="51413" Default="51413" Mode="udp" Description="Torrent Port UDP" Type="Port" Display="always" Required="true" Mask="false">51413</Config>
+  <Config Name="/downloads" Target="/downloads" Default="/mnt/user/downloads/" Mode="rw" Description="Local path for downloads." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/</Config>
+  <Config Name="/watch" Target="/watch" Default="/mnt/user/downloads/watch/" Mode="rw" Description="Watch folder for torrent files." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/watch/</Config>
+  <Config Name="TRANSMISSION_WEB_HOME" Target="TRANSMISSION_WEB_HOME" Default="/transmission-web-control/" Mode="" Description="Specify an alternative UI options are /combustion-release/, /transmission-web-control/, /kettu/ and /flood-for-transmission/." Type="Variable" Display="always" Required="true" Mask="false">/transmission-web-control/</Config>
+  <Config Name="USER" Target="USER" Default="admin" Mode="" Description="Specify an optional username for the interface" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
+  <Config Name="PASS" Target="PASS" Default="admin" Mode="" Description="Specify an optional password for the interface" Type="Variable" Display="always" Required="true" Mask="true">admin</Config>
+  <Config Name="WHITELIST" Target="WHITELIST" Default="*" Mode="" Description="Specify an optional list of comma separated ip whitelist. Fill rpc-whitelist setting" Type="Variable" Display="always" Required="true" Mask="false">*</Config>
+  <Config Name="HOST_WHITELIST" Target="HOST_WHITELIST" Default="*" Mode="" Description="Specify an optional list of comma separated dns name whitelist. Fill rpc-host-whitelist setting" Type="Variable" Display="always" Required="true" Mask="false">*</Config>
+  <Config Name="PEERPORT" Target="PEERPORT" Default="51413" Mode="" Description="Specify an optional port for torrent TCP/UDP connections. Fill peer-port setting" Type="Variable" Display="always" Required="true" Mask="false">51413</Config>
+  <Config Name="TZ" Target="TZ" Default="Asia/Shanghai" Mode="" Description="Specify a timezone to use EG Europe/London." Type="Variable" Display="advanced" Required="true" Mask="false">Asia/Shanghai</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/sda5/appdata/transmission" Mode="rw" Description="Where transmission should store config files and logs" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/sda5/appdata/transmission</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="{3}" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
-  <Config Name="UMASK" Target="UMASK" Default="022" Mode="{3}" Description="Container Variable: UMASK" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
 </Container>
